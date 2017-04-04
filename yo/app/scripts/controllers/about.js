@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the yoApp
  */
-angular.module('yoApp')
+angular.module('lolChampsAppp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

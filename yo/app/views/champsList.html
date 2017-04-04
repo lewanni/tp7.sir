@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1>Liste des champions du patch {{version}} </h1>
+  <p class="lead">
+    <div ng-repeat="c in lsChamps | orderBy:'name'">
+      <img src="images/champion/{{c.image.full}}" alt="{{c.name}}" title="Image de {{c.name}}">
+      <b>{{c.name}}</b> :
+      {{c.title}}
+      <br>
+      {{c.blurb}}
+      <br> <br> <br>
+    </div>
+  </p>
+</div>
