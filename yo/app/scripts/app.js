@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('lolChampsAppp', [
+  .module('lolChampsApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -19,14 +19,15 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  // Enlever le hash-bang :  passer de '#!' à '#' pour les href
+  // Enleve le hash-bang :  passer de '#!' à '#' pour les href
   .config(['$locationProvider', function($locationProvider) {
         $locationProvider.hashPrefix('');
     }])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html'
+        templateUrl: 'views/main.html',
+        controller: 'commentsCtrl'
       })
       .when('/champsList', {
         templateUrl: 'views/champsList.html',

@@ -22,4 +22,24 @@
 
   <h4>Commentaires</h4>
   <p>Lâchez vos commentaires, dites-nous ce que vous en pensez du site.</p>
+  <div class="jumbotron">
+    <p class="lead">
+      <div id="chatbox" >
+        <div ng-repeat="m in msg | orderBy:'-id'">
+          <b>{{m.name}}</b> a écrit le {{m.date}} : <br>
+          <font color="grey"><b><i>{{m.content}}</i></b></font>
+        </div>
+      </div>
+      <br>
+      <form action="rest/msg/add" method="post" onsubmit="return checkForm(this)">
+    			Nom : <input type="text" name="name" onblur="check(this)"> <br> <br>
+    			Message : <br>
+          <textarea rows="4" cols="50" name="content" onblur="check(this)"></textarea>
+          <br>
+    		<input type="submit" value="Ajouter" />
+        <button type="button" name="button" onclick="window.location.reload()">Rafraîchir</button>
+    	</form>
+      <br>
+
+  </div>
 </div>

@@ -17,15 +17,10 @@ import jpa.Message;
 
 @Path("/msg")
 public class MessageRessource {
-	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String sayHello() {
-		return "Coucou ptit test";
-	}
 	
 	@POST
 	@Path("/add")
-	public String addMessage(@FormParam("name") String name, @FormParam("content") String content) {
+	public void addMessage(@FormParam("name") String name, @FormParam("content") String content) {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("tp7.sir");
 		EntityManager manager = factory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
@@ -39,10 +34,10 @@ public class MessageRessource {
 		tx.commit();
 		manager.close();
 		factory.close();
-		System.out.println(".. done.. Message envoyÈ et registrÈ dans la bd");
-		String response = "Dernier message envoyÈ par " + name + " : " + content + "\n"
-				+ "<h1>aaaa</h1>";
-		return response;
+		System.out.println(".. done.. Message envoy√© et registr√© dans la bd");
+		String response = "Dernier message envoy√© par " + name + " : " + content + "<br>"
+				+ "<a href='/'>Retour √† la page pr√©c√©dente</a>";
+		//return response;
 	}
 	
 	@GET
@@ -59,11 +54,11 @@ public class MessageRessource {
 		System.out.println(resultList);
 		System.out.println("Messages :");
 		for (Message next : resultList) {
-			System.out.println(next.getName() + " a Ècrit : " + next.getContent());
+			System.out.println(next.getName() + " a √©crit : " + next.getContent());
 		}
 		manager.close();
 		factory.close();
-		System.out.println(".. done.. Message envoyÈ et registrÈ dans la bd");
+		System.out.println(".. done.. Message envoy√© et registr√© dans la bd");
 		return resultList;
 	}
 }
