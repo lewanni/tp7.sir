@@ -22,7 +22,7 @@ angular.module('lolChampsApp')
 * Fonction qui vérifie les champ du formulaire ajout commentaire
 */
 function check(champ) {
-  if (champ.value.length < 2 || champ.value.length > 100) {
+  if (champ.value.length < 2 || champ.value.length > 500) {
     return false;
   } else {
     return true;
@@ -34,15 +34,15 @@ function check(champ) {
 * et décide d'ajouter dans la bd ou pas
 */
 function checkForm(f) {
-   var name = check(f.name);
-   var content = check(f.content);
+  var name = check(f.name);
+  var content = check(f.content);
 
-   if (name && content) {
-     alert("Votre commentaire a bien été ajouté.");
-     return true;
-   }
-   else {
-      alert("Veuillez remplir correctement tous les champs.");
-      return false;
-   }
+  if (name && content) {
+   alert("Votre commentaire a bien été ajouté.");
+   return true;
+  }
+  else {
+    alert("Veuillez remplir correctement tous les champs.");
+    return false;
+  }
 }

@@ -15,9 +15,20 @@ import javax.ws.rs.core.MediaType;
 
 import jpa.Message;
 
+/**
+ * Classe ressource pour enregistrer et afficher les messages présents
+ * dans la bd
+ * @author Quang LE
+ *
+ */
 @Path("/msg")
 public class MessageRessource {
 	
+	/**
+	 * Méthode ajouter le message dans la bd depuis un formulaire
+	 * @param name le champ nom du formulaire qui sera stocké dans la bd
+	 * @param content le champ content du formulaire qui sera stocké dans la bd
+	 */
 	@POST
 	@Path("/add")
 	public void addMessage(@FormParam("name") String name, @FormParam("content") String content) {
@@ -34,12 +45,13 @@ public class MessageRessource {
 		tx.commit();
 		manager.close();
 		factory.close();
-		System.out.println(".. done.. Message envoyé et registré dans la bd");
-		String response = "Dernier message envoyé par " + name + " : " + content + "<br>"
-				+ "<a href='/'>Retour à la page précédente</a>";
-		//return response;
+		System.out.println("..addMessage()..done..");
 	}
 	
+	/**
+	 * Méthode GET pour obtenir le json dans une uri
+	 * @return json qui contient les messages stockés dans la bd
+	 */
 	@GET
 	@Path("/all")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -48,17 +60,10 @@ public class MessageRessource {
 		EntityManager manager = factory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
-		
 		List<Message> resultList = manager.createQuery("SELECT aa FROM Message aa", Message.class).getResultList();
-		System.out.println("number of messages : " + resultList.size());
-		System.out.println(resultList);
-		System.out.println("Messages :");
-		for (Message next : resultList) {
-			System.out.println(next.getName() + " a écrit : " + next.getContent());
-		}
 		manager.close();
 		factory.close();
-		System.out.println(".. done.. Message envoyé et registré dans la bd");
+		System.out.println("..getMessage()..done..");
 		return resultList;
 	}
 }
