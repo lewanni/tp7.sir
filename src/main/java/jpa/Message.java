@@ -12,13 +12,13 @@ import javax.persistence.Table;
 public class Message {
 	
 	private long id;
-	@Column(name = "User")
-	private String user;
+	@Column(name = "Name")
+	private String name;
 	@Column(name = "Content")
 	private String content;
 
-	public Message(String user, String content) {
-		this.user = user;
+	public Message(String name, String content) {
+		this.name = name;
 		this.content = content;
 	}
 	
@@ -27,19 +27,19 @@ public class Message {
 	}
 
 	public String getContent() {
-		return this.content;
+		return content;
 	}
 
 	public void setContent(String content) {
 		this.content = content;
 	}
 	
-	public String getUser() {
-		return this.user;
+	public String getName() {
+		return name;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setName(String user) {
+		this.name = user;
 	}
 
 	@Id

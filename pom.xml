@@ -6,6 +6,12 @@
 	<artifactId>tp7</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -50,49 +56,6 @@
 					<path>/</path>
 				</configuration>
 			</plugin>
-			<plugin>
-                <groupId>com.github.trecloux</groupId>
-                <artifactId>yeoman-maven-plugin</artifactId>
-                <version>0.1</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>yo/dist</directory>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>yo/dist</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>yo/.tmp</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>yo/app/components</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>yo/node_modules</directory>
-                        </fileset>
-                    </filesets>
-                </configuration>
-            </plugin>
 		</plugins>
 	</build>
 </project>

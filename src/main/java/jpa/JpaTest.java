@@ -53,7 +53,7 @@ public class JpaTest {
 		System.out.println("number of messages : " + resultList.size());
 		System.out.println("Messages :");
 		for (Message next : resultList) {
-			System.out.println(next.getContent());
+			System.out.println(next.getName() + " a écrit : " + next.getContent());
 		}
 	}
 }
