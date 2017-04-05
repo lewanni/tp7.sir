@@ -18,12 +18,13 @@
 		* 1 controller pour afficher sur le site les données du json qui correspondent aux données de hsqldb disponibles dans une URI
  
 ## Informations complémentaires
- Le fichier json présent dans le projet vient du site [Riot Developer Portal](https://developer.riotgames.com/) (il faut être joueur dans le jeu League of Legends pour avoir accès au site api de développement)
+- Ayant mal compris au départ le sujet du tp7, où il fallait normalement réutiliser les classes persistantes du tp2 de opower, nous sommes conscient que ce projet est moins lourd avec un modèle simple par rapport à ce qui est prévu, vu qu'on est parti de zéro et de notre imagination.
+ - Le fichier json présent dans le projet vient du site [Riot Developer Portal](https://developer.riotgames.com/) (il faut être joueur dans le jeu League of Legends pour avoir accès au site api de développement)
 	
 ## Technologies utilisées
 * Java
 * JPA
-* Jersey : framework JaxRS RESTful Web Services (pas besoin de servlet c'est la même chose en mieux)
+* Jersey : framework JaxRS RESTful Web Services (pas besoin de servlet c'est pratiquement la même chose mais en mieux)
 * HTML5
 * AngularJs v1.6.4 : framework JavaScript
 * Bootstrap : framework CSS
