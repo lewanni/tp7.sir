@@ -16,13 +16,13 @@ import javax.ws.rs.core.MediaType;
 import jpa.Message;
 
 /**
- * Classe ressource pour enregistrer et afficher les messages présents
+ * Classe rest service pour enregistrer et afficher les messages présents
  * dans la bd
  * @author Quang LE
  *
  */
 @Path("/msg")
-public class MessageResource {
+public class MessageRestService {
 	
 	/**
 	 * Méthode ajouter le message dans la bd depuis un formulaire

@@ -9,13 +9,13 @@ import javax.ws.rs.core.MediaType;
 import org.json.simple.parser.JSONParser;
 
 /**
- * Classe ressource qui récupère les données des champions
+ * Classe rest service qui récupère les données des champions
  * depuis l'import d'un fichier json
  * @author Quang LE
  *
  */
 @Path("/champions")
-public class ChampionsResource {
+public class ChampionsRestService {
 	
 	/**
 	 * Méthode GET pour obtenir le json dans une uri à partir d'un fichier json
