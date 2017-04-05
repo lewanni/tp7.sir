@@ -20,7 +20,7 @@
 ## Technologies utilisées
 * Java
 * JPA
-* Jersey : framework JaxRS RESTful Web Services
+* Jersey : framework JaxRS RESTful Web Services (pas besoin de servlet c'est la même chose en mieux)
 * HTML5
 * AngularJs v1.6.4 : framework JavaScript
 * Bootstrap : framework CSS
