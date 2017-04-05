@@ -16,6 +16,9 @@
 	- On a 2 controllers AngularJs : 
 		* 1 controller pour afficher sur le site les données du json importé localement disponibles dans une URI
 		* 1 controller pour afficher sur le site les données du json qui correspondent aux données de hsqldb disponibles dans une URI
+ 
+## Informations complémentaires
+ Le fichier json présent dans le projet vient du site [Riot Developer Portal](https://developer.riotgames.com/) (il faut être joueur dans le jeu League of Legends pour avoir accès au site api de développement)
 	
 ## Technologies utilisées
 * Java
