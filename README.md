@@ -9,8 +9,8 @@
 	- Il y a tout ce qui est géré par Java, JPA et JaxRS pour récupérer les données depuis une base données hsqldb et les affichées dans des URI, tournés sur un serveur local Tomcat7
 	- Il y a 3 services de lecture, qui seront utilisés par les services $httpget AngularJs :
 		* 1 pour importer un fichier json local et le rendre disponible dans une URI
-		* 1 pour afficher en json dans une URI les messages présentes dans la base de données hsqldb.
-		* 1 pour afficher en json dans une URI les données du formulaire de contact présentes dans la base de données hsqldb.
+		* 1 pour afficher en json dans une URI les commentaires enregistrés dans la base de données hsqldb.
+		* 1 pour afficher en json dans une URI les formulaires de contact enregistrés dans la base de données hsqldb.
 	- Il y a 2 service d'écriture pour récupérer les informations saisies depuis le site(commentaire et formulaire de contact) et les stockées en tant qu'entité persistante dans JPA
 * En Front-End : 
 	- Il y a 2 frameworks : AngularJs et Bootstrap
