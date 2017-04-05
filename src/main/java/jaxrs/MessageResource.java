@@ -22,7 +22,7 @@ import jpa.Message;
  *
  */
 @Path("/msg")
-public class MessageRessource {
+public class MessageResource {
 	
 	/**
 	 * Méthode ajouter le message dans la bd depuis un formulaire

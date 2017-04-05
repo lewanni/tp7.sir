@@ -15,7 +15,7 @@ import org.json.simple.parser.JSONParser;
  *
  */
 @Path("/champions")
-public class ChampionsRessource {
+public class ChampionsResource {
 	
 	/**
 	 * Méthode GET pour obtenir le json dans une uri à partir d'un fichier json

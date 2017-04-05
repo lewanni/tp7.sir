@@ -1,4 +1,2 @@
-/*C325*/SET SCHEMA PUBLIC
-INSERT INTO MESSAGE VALUES(52,'Je ne sais pas pourquoi mais bower_components et node_modules n''ont pas \u00e9t\u00e9 commit\u00e9 sur git : peut \u00eatre dossier trop lourd ??','05/04/17 00:58','Quang')
-COMMIT
+/*C2*/SET SCHEMA PUBLIC
 DISCONNECT
