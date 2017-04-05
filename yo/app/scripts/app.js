@@ -37,6 +37,10 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'commentsCtrl'
+      })
       .when('/404', {
         templateUrl: 'views/404.html',
       })

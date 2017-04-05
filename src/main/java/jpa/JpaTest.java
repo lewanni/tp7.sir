@@ -37,11 +37,13 @@ public class JpaTest {
 
 		try {
 			test.createMessage();
+			test.createMail();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		tx.commit();
 		test.listMessages();
+		test.listMails();
 		manager.close();
 		factory.close();
 		System.out.println(".. done");
@@ -61,6 +63,27 @@ public class JpaTest {
 	}
 	
 	/**
+	 * Fonction qui crée 5 mails par une personne si la bd est vide
+	 */
+	private void createMail() {
+		int numOfMail = manager.createQuery("SELECT a FROM MailContact a", MailContact.class).getResultList().size();
+		if (numOfMail == 0) {
+			Person p = new Person("le", "quang", "quang2017@gmai.com");
+			for (int i = 0; i < 5; i++) {
+				MailContact mail = new MailContact(p, "ke" + i);
+				p.getLsMails().add(mail);
+				manager.persist(p);
+				manager.persist(mail);
+			}
+			Person p1 = new Person("le", "quang", "quang2017@gmai.com");
+			MailContact mail1 = new MailContact(p1, "ke1");
+			p1.getLsMails().add(mail1);
+			manager.persist(p1);
+			manager.persist(mail1);
+		}
+	}
+	
+	/**
 	 * Fonction qui affiche la liste des messages présents dans la bd
 	 */
 	private void listMessages() {
@@ -69,6 +92,18 @@ public class JpaTest {
 		System.out.println("Messages :");
 		for (Message next : resultList) {
 			System.out.println(next.getName() + " a écrit: " + next.getContent());
+		}
+	}
+	
+	/**
+	 * Fonction qui affiche la liste des mails
+	 */
+	private void listMails() {
+		List<MailContact> resultList = manager.createQuery("SELECT a FROM MailContact a", MailContact.class).getResultList();
+		System.out.println("number of mails : " + resultList.size());
+		System.out.println("Mails :");
+		for (MailContact next : resultList) {
+			System.out.println(next.getPerson().getName() + " a écrit: " + next.getContent() + " à " + next.getDate());
 		}
 	}
 }
