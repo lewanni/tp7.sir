@@ -53,16 +53,9 @@
   * Retour sur votre IDE, lancez votre application en tant que que maven build... : "tomcat7:run"
 - Front-End :
   * Il manque 2 dossiers dans ce dépôt git et qui sont indispensables pour faire fonctionner le site en local "bower_components" et "node_modules". Nous allons donc devoir les regénérer en suivant ces étapes suivantes.
-  * Créez un dossier au hasard sur votre disque dur et positionnez vous dans ce dossier depuis un cmd
-  * Dans ce dossier et depuis un cmd, exécutez les commandes suivantes :
-    * npm install -g yo grunt-cli bower (si c'est la 1ère fois que vous utilisez npm)
-    * npm install -g generator-angular (si c'est la 1ère fois que vous utilisez npm)
-		* yo angular :
-      - Répondez No concernant Gulp au lieu de Grunt
-        - Répondez No concernant l'utilisation de Sass
-        - Répondez Yes concernant l'utilisation de Bootstrap
-        - Cochez toutes les cases concernant les modules angular
-    * npm install grunt-connect-proxy --save-dev
-  * Une fois que toute les commandes sont exécutées, copiez 2 dossiers "bower_components" et node_modules et collez-les dans le dossier "yo" qui se trouve à la racine du projet maven.
+  * Positionnez vous dans le dossier "yo" du projet maven depuis un cmd
+  * Dans ce dossier et depuis le cmd, exécutez les commandes suivantes :
+    * npm install (pour générer le dossier "node_modules")
+    * bower install angular-ui (pour générer le dossier "bower_components")
   * Lancez un cmd depuis le dossier yo et exécutez la commande : grunt serve
   * L'application web devrait se lancer sur votre navigateur à l'adresse : http://localhost:9000/
